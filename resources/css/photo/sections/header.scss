@@ -1,0 +1,42 @@
+
+.m_header {
+    width: 100%;
+    display: grid;
+    grid-template-areas: 'logo menu';
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+
+    .m_logo {
+        margin-left: 30px;
+        font-size: 60px;
+    }
+
+    .m_main_menu {
+        a, p, span {
+            color: unset;
+            text-decoration: none;
+        }
+
+        line-height: 2rem;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 2rem;
+        height: 2rem;
+
+        .m_menu-item {
+            &.active {
+                color: $font-color_active;
+            }
+
+            text-align: center;
+            text-transform: uppercase;
+            border-radius: 0.5rem;
+            cursor: pointer;
+
+            &:hover, &:active, &:focus {
+                transition: 0.5s;
+                color: $font-color_active;
+            }
+        }
+    }
+}

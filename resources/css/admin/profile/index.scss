@@ -1,0 +1,40 @@
+.album-list {
+    display: flex;
+
+    .album {
+        position: relative;
+        margin-right: 30px;
+        height: 250px;
+        width: 250px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        transition: 0.3s;
+
+        &:hover{
+            transform: scale(1.05);
+            .album_title {
+                opacity: 1;
+                top: -50px;
+            }
+        }
+
+        img {
+            height: 250px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .album_title {
+            position: relative;
+            background: $black;
+            opacity: 0.5;
+            top: -20px;
+            height: 50px;
+            color: $white;
+            z-index: 100;
+            transition: 0.3s;
+        }
+    }
+}

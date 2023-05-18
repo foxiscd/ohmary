@@ -11,14 +11,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
-
-    @vite( 'resources/js/app.js')
+    @yield('vite')
+    @stack('styles')
 </head>
 <body>
-@include('sections.header')
-<section class="m_content">
-        @yield('content')
-</section>
-@include('sections.footer')
+@yield('layout-content')
+<script>window.appParams = @json($app)</script>
+@stack('scripts')
 </body>
 </html>

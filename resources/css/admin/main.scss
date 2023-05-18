@@ -1,0 +1,73 @@
+@import "../app";
+@import "../bondles/spinner";
+@import "../bondles/bootstrap/bootstrap.css";
+
+$link-menu-height: 25px;
+
+.m_content {
+    width: 100%;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.m_sidebar {
+    height: calc(100vh - $main-menu-height);
+    width: 220px;
+    border-top: 1px solid $white;
+    text-align: left;
+
+    &.m_back-color-black {
+        background: $black;
+        border-top: 1px solid $white;
+    }
+
+    &.m_text-color-white {
+        color: $white;
+    }
+
+    ul {
+        position: relative;
+        padding: 2px 0 2px 0;
+    }
+
+    .m_nav {
+        text-decoration: none;
+        list-style-type: none;
+        padding: 0;
+        margin: 0 0 0 2px;
+        margin-top: 20px;
+
+        &.main > li {
+            padding-left: 0;
+            border: 0;
+        }
+
+        li {
+            position: relative;
+            right: 0;
+            border: 1px solid $black;
+            line-height: $link-menu-height;
+            padding: 2px 0 2px 15px;
+            width: 100%;
+            cursor: pointer;
+
+            a {
+                border: 1px solid $black;
+                text-decoration: none;
+                color: white;
+                display: block;
+                padding: 5px;
+
+                &.active {
+                    color: $gold;
+                    border: 1px solid $gold;
+                    border-radius: 5px 0 0 5px;
+                }
+
+                &:hover {
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+}

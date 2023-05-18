@@ -1,20 +1,19 @@
 <?php
 
+use App\Http\Middleware\ShareView;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MainController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => ShareView::class], function () {
+    Route::get('admin/{any?}', function () {
+        return view('layouts.admin');
+    })->where('any', '.*');
 });
-Route::get('/admin', [MainController::class, 'index']);
+
+Route::group(['middleware' => ShareView::class], function () {
+    Route::get('{any}', function () {
+        return view('layouts.photo');
+    })->where('any', '.*');
+});
+
+
